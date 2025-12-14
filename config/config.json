@@ -1,0 +1,10 @@
+{
+    "tesseract_path": {
+        "local_path": "C:/Program Files/Tesseract-OCR/tesseract.exe",
+        "docker_path": "/usr/bin/tesseract"
+    },
+    "prompts": {
+        "items_price_prompt": "You are an AI assistant. Here is a restaurant bill. Understand the bill and your task is to create a json string of item, quantity and price only from the below given data. For prices, only the price should be as the output, not any symbol preceeding or succeeding it.\n\nData: {text}\n\nExpected Output Format: If the data contains three items,\n{{\n  \"Items\": [\"Item1\", \"Item2\", \"Item3\"],\n  \"Quantity\": [\"Quantity1\", \"Quantity2\", \"Quantity3\"],\n  \"Prices\": [\"Price1\", \"Price2\", \"Price3\"]\n}}",
+        "tax_total_prompt": "You are an AI assistant. Here is a restaurant bill. Understand the bill and your task is to create a json string of final total—a total amount, CGST percentage, and SGST percentage only from the below given data. Extract percentage values only (no % symbol). If CGST or SGST is missing, consider it as 0. Ensure the total amount is the final total inclusive of all taxes. The response will be directly loaded into JSON, so return valid JSON only (no backticks).\n\nData: {text}\n\nExpected Output Format:\n{{\n  \"Total\": \"\",\n  \"CGST\": \"\",\n  \"SGST\": \"\"\n}}"
+    }
+}
